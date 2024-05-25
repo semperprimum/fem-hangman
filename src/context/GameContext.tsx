@@ -47,13 +47,13 @@ const initialState: GameState = {
     "Animals",
     "Sports",
   ],
-  selectedCategory: null,
-  selectedWord: null,
-  guessedLetters: [],
-  lives: 8,
+  selectedCategory: "Countries",
+  selectedWord: "United Kingdom",
+  guessedLetters: ['d', 'n', 'o', 'i', 'u'],
+  lives: 4,
   gameOver: false,
-  pickCategory: () => {},
-  guessLetter: () => {},
+  pickCategory: () => { },
+  guessLetter: () => { },
 };
 
 const reducer = (state: GameState, action: GameAction) => {
