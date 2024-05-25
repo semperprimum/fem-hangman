@@ -17,11 +17,23 @@ const ProgressContainer = styled.div`
   background-color: white;
   border-radius: 100vmax;
   padding: 0.25rem;
+
+  @media screen and (min-width: 48em) {
+    width: 10rem;   	
+    padding: .5625rem .6875rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    width: 15rem;
+  }
 `;
 
 const Progress = styled.div`
   height: 0.5rem;
-  /* width: 100%; */
   background-color: var(--clr-primary-200);
   border-radius: 100vmax;
+
+  @media screen and (min-width: 48em) {
+    height: .8125rem;   	
+  }
 `;

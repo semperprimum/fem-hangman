@@ -42,6 +42,14 @@ const Left = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+
+  @media only screen and (min-width: 48em) {
+    gap: 2rem;  
+  }
+
+  @media only screen and (min-width: 90em) {
+    gap: 3.5rem;
+  }
 `;
 
 const CategoryName = styled.div`
@@ -49,7 +57,7 @@ const CategoryName = styled.div`
   letter-spacing: -0.2px;
 
   @media only screen and (min-width: 48em) {
-    letter-spacing: auto;
+    letter-spacing: 2.4px;
   }
 `;
 
@@ -59,9 +67,17 @@ const Right = styled.div`
   align-items: center;
   gap: 1rem;
 
+  @media only screen and (min-width: 48em) {
+    gap: 2.5rem;
+  }
+
   svg {
     display: block;
     width: 1.625rem;
     height: 100%;
+
+    @media only screen and (min-width: 48em) {
+      width: 3.375rem;
+    }
   }
 `;

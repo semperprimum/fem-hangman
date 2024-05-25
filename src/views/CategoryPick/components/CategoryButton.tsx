@@ -20,4 +20,13 @@ export const CategoryButton = styled.button`
     padding: 1rem;
     border-radius: 2.5rem;
   }
+
+  @media only screen and (min-width: 90em) {
+    transition: filter 150ms ease;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
 `;

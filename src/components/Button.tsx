@@ -21,4 +21,13 @@ export const Button = styled.button<{ $secondary?: boolean }>`
       background-image: var(--gradient-1);
       box-shadow: inset 0 -2px 0 3px #140e66, inset 0 1px 0 6px #c642fb;
     `}
+
+  @media only screen and (min-width: 90em) {
+    transition: filter 150ms ease;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
 `;

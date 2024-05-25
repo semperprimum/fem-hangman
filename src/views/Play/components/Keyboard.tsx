@@ -1,6 +1,7 @@
 import { Squircle } from "corner-smoothing";
 import styled, { css } from "styled-components";
 import { useGame } from "../../../context/GameContext";
+import { useMatchMedia } from "../../../hooks/useMatchMedia";
 
 const letters: string[] = [
   "a",
@@ -33,6 +34,7 @@ const letters: string[] = [
 
 export const Keyboard = () => {
   const gameContext = useGame();
+  const isTablet = useMatchMedia("(min-width: 48em)");
 
   return (
     <KeyboardContainer>
@@ -41,7 +43,7 @@ export const Keyboard = () => {
           $selected={gameContext.guessedLetters.includes(letter)}
           key={letter}
           role="button"
-          cornerRadius={8}
+          cornerRadius={isTablet ? 24 : 8}
           cornerSmoothing={1}
           onClick={() => gameContext.guessLetter(letter)}
         >
@@ -61,9 +63,18 @@ const KeyboardContainer = styled.div`
   row-gap: 1.5rem;
 
   margin-top: 7.375rem;
+
+  @media only screen and (min-width: 48em) {
+    grid-auto-rows: 5.25rem;
+    column-gap: 1rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    column-gap: 1.5rem;
+  }
 `;
 
-const Key = styled(Squircle)<{ $selected: boolean }>`
+const Key = styled(Squircle) <{ $selected: boolean }>`
   display: grid;
   place-items: center;
 
@@ -79,4 +90,20 @@ const Key = styled(Squircle)<{ $selected: boolean }>`
     css`
       opacity: 0.25;
     `}
+
+  ${(props) =>
+    !props.$selected &&
+    css`
+    @media only screen and (min-width: 90em) {
+      cursor: pointer;
+      transition: background-color 50ms ease,
+                  color 150ms ease;
+
+      &:hover {
+        background-color: var(--clr-primary-100);
+        color: white;
+      }
+    }
+  `}
+
 `;

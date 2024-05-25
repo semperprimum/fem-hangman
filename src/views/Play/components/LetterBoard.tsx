@@ -28,6 +28,10 @@ const BoardContainer = styled.div`
 
   row-gap: 0.75rem;
   column-gap: 3.5rem;
+
+  @media only screen and (min-width: 48em) {
+    row-gap: 1rem;
+  }
 `;
 
 const Word = styled.div`
@@ -35,6 +39,14 @@ const Word = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+
+  @media only screen and (min-width: 48em) {
+    gap: 0.75rem;  
+  }
+
+  @media only screen and (min-width: 90em) {
+    gap: 1rem;
+  }
 `;
 
 const Letter = styled.span`
@@ -53,5 +65,17 @@ const Letter = styled.span`
 
   &:empty {
     opacity: 0.25;
+  }
+
+  @media only screen and (min-width: 48em) {
+    width: 5.5rem;
+    height: 7rem;
+    border-radius: 2rem;
+  }
+
+  @media only screen and (min-width: 90em) {
+    width: 7rem;
+    height: 8rem;
+    border-radius: 2.5rem;
   }
 `;

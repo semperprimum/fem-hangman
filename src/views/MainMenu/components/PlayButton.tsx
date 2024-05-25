@@ -37,6 +37,15 @@ const PlayButtonContainer = styled.button`
   &:active {
     scale: 0.9;
   }
+
+  @media only screen and (min-width: 90em) {
+  transition: scale 75ms ease
+              filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
+  }
 `;
 
 const PlayIconContainer = styled.div`

@@ -43,6 +43,12 @@ const Button = styled.button`
 
   @media only screen and (min-width: 90em) {
     width: 5.875rem;
+    cursor: pointer;
+    transition: filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.25);
+    }
 
     svg {
       width: 2.5rem;

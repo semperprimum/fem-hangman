@@ -74,11 +74,15 @@ const Dialog = styled.dialog`
   border-radius: 3rem;
   box-shadow: inset 0 -8px 0 4px #140e66, inset 0 6px 0 8px #2463ff;
 
-  width: calc(100% - 3.25rem);
+  width: min(calc(100% - 3.25rem), 37rem);
 
   &::backdrop {
     background: var(--gradient-3);
     opacity: 0.75;
+  }
+
+  @media only screen and (min-width: 90em) {
+    border-radius: 4.5rem;
   }
 
   @keyframes appear {
@@ -107,6 +111,8 @@ const Title = styled.h3<{ $text: string }>`
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  white-space: nowrap;
 
   &::before {
     content: "${(props) => props.$text}";

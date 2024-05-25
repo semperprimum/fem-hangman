@@ -17,7 +17,7 @@ interface GameState {
     "Countries",
     "Capital Cities",
     "Animals",
-    "Sports"
+    "Sports",
   ];
   selectedCategory: string | null;
   selectedWord: string | null;
@@ -73,6 +73,7 @@ const reducer = (state: GameState, action: GameAction) => {
         lives: 8,
         gameOver: false,
       };
+
     case GameActionKind.GUESS_LETTER:
       const guessedLetter = action.payload;
       const { selectedWord: currentWord, guessedLetters, lives } = state;
