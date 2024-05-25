@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ openModal }) => {
   );
 };
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   padding-top: 2.875rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

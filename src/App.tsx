@@ -13,7 +13,11 @@ const App = () => {
 
       <GlobalStyle />
 
-      <AppRoutes />
+      <h1 className="sr-only">The Hangman Game</h1>
+
+      <main>
+        <AppRoutes />
+      </main>
     </AppWrapper>
   );
 };
